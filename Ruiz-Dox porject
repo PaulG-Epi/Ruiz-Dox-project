@@ -1,0 +1,15 @@
+
+> library(readxl)
+> TransformedLong <- read_excel("C:/Users/PJ/OneDrive/Desktop/TransformedLong.xlsx")
+New names:
+  • `` -> `...1`
+> View(TransformedLong)
+> library(readxl)
+> TransformedLong <- read_excel("C:/Users/PJ/OneDrive/Desktop/TransformedLong.xlsx")
+> View(TransformedLong)
+> library(nlme)
+> linmodel <- lme(y~Celltype,random = ~1|mouse/point, data = TransformedLong)
+> summary(linmodel)
+
+
+> plot(linmodel,resid(.,type="p")~fitted(.))
